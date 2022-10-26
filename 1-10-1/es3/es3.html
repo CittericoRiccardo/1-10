@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <title>ES 3 Gloria</title>
+    <script>
+        function trovaparola() {
+            var n1 = document.forms.n.n1.value;
+            //mi torna la prima posizione della parola zip in una frase
+            var posizione = n1.search("zip");
+            if (posizione != -1) {
+                var a = n1.substr(0, posizione);
+                var b = n1.substr(posizione, n1.lenght);
+                var c = b.search("zip");
+                contatore = a.lenght + c;
+            }
+            document.getElementById("R").innerHTML = contatore;
+        }
+
+    </script>
+</head>
+
+<body>
+    <h2>inserisci una stringa che contiene la parola zip</h2>
+    <form name="n">
+        <input type='text' name='n1' />
+        <input type="submit" name="submit" value="risultato" onclick=trovaparola() />
+    </form>
+    <p id="R">Risultato:</p>
+</body>
+
+</html>
