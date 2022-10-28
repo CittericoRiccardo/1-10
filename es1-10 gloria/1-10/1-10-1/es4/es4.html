@@ -1,0 +1,22 @@
+<html>
+
+<head>
+    <title>ES4 GLORIA</title>
+</head>
+
+<body>
+    <h1>ES 4 PER LA GLORIA</h1>
+    <p id="casuale"></p>
+    <button onclick="genera()">
+        genera numero
+    </button>
+    <script>
+        
+        function genera() {
+            //la math. random il risultato me lo inserisce nell'emento con id = casuale
+            document.getElementById("casuale").innerHTML = Math.floor(Math.random() * 10);
+        }
+    </script>
+</body>
+
+</html>
