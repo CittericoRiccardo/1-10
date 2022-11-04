@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>Es EMAIL</title>
+    <script>
+        function validazioneEmail(email) {
+            // recupero il valore della email indicata nel form
+            var email = document.forms['em'].email.value;
+            // se non ho inserito nulla nel campo
+            if (email == '') { alert("Devi indicare un indirizzo email"); return false; }
+            // verifico se è un indirizzo valido
+            if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+                alert("L'indirizzo email  e' valido")
+            }
+            else {
+                alert("L'indirizzo email  non e' valido");
+            }
+            return false;
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Indica il tuo indirizzo email</h2>
+    <form name="em">
+        <input type='text' name='email' />
+        <input type="submit" name="submit" value="Submit" onclick="return validazioneEmail()" />
+    </form>
+</body>
+
+</html>

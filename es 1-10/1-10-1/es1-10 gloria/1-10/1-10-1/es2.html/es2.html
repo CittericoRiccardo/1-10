@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <title>ES 2 Gloria</title>
+    <script>
+        function swapsMinimi() {
+
+
+            //prende il valore che inserisco da tastirea
+            var n1 = document.forms["n"]["n1"].value;
+            var n2 = document.forms["n"]["n2"].value;
+            //servono a contare i numeri di 0 e 1 che ho
+            var n0z = 0;
+            var n0u = 0;
+            var n1z = 0;
+            var n1u = 0;
+            //variabile a parte
+            var cambiamenti = 0;
+            //controlla se i due valori hanno la stessa lunghezza e il tipo(numeri)
+            if (n1.length == n2.length) {
+                console.log("ei");
+                for (var i = 0; i < n1.length; i++) { //for controlla fino alla fine della lunghezza della stringa
+                    if (n1.charAt(i) == '0') { //controlla se il carattere nella posizione i sia 0, siccome lo 0 è una stringa lo metto tra apici
+                        n0z++;
+                    } else {
+                        if (n1.charAt(i) == '1') {//controllo che il valore nella posizione i sia 1 e incrementa la variabile contatore degli 1 della prima stringa
+                            n0u++;
+                        }
+                    }
+                    if (n2.charAt(i) == '0') { //controlla se il carattere nella posizione i sia 0, siccome lo 0 è una stringa lo metto tra apici
+                        n1z++;
+                    } else {
+                        if (n2.charAt(i) == '1') {//controllo che il valore nella posizione i sia 1 e incrementa la variabile contatore degli 1 della prima stringa
+                            n1u++;
+                        }
+                    }
+                }
+                //se le condizioni sono vere guarada quanti spostamenti deve fare per avere lo stesso numero
+                if (n0u == n1u && n0z == n1z) {
+                    for (var i = 0; i < n1.length; i++) {
+                        if (n1.charAt(i) != n2.charAt(i)) {
+                            cambiamenti++;
+                            console.log(cambiamenti);
+                            n1 = n1.substring(0, i) + n1.charAt(i + 1) + n1.charAt(i) + n1.substring(i + 2);//cambia la string n1 e modivica nella posizione i un altro valore                        
+                        }
+                    }
+                }
+                document.getElementById("R").innerHTML = "Risultato:" + cambiamenti;//stampa valore
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h2>inserisci 2 valori binari con la stessa lunghezza e stesso numero di 0 e 1</h2>
+    <form name="n">
+        <input type='text' name='n1' />
+        <input type='text' name='n2' />
+    </form>
+    <button onclick=swapsMinimi()>Invio</button>
+    <p id="R">Risultato:</p>
+</body>
+
+</html>

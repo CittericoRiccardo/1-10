@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <title>Es YOUTUBE</title>
+    
+</head>
+
+<body>
+    <!--metto 0 e 1 per capire chi sta chiamando questa funzione-->
+    <button id="b" onclick=pollice(0)>like</button>
+    <button id="p"  onclick=pollice(1)>don't like </button>
+</body>
+<script>
+    var a;
+    var c = 3;
+    const like = document.getElementById("b");
+    const unlike = document.getElementById("p");
+    function pollice(a) {
+        if (c != a) {
+            if (a == 0) {
+                like.style.backgroundColor = 'blue';
+                unlike.style.backgroundColor = 'gray';
+            } else {
+                unlike.style.backgroundColor = 'blue';
+                like.style.backgroundColor = 'gray';
+            }
+        } else {
+            if (a == 0) {
+                like.style.backgroundColor = 'gray';
+            } else {
+                unlike.style.backgroundColor = 'gray';
+            }
+        }
+        c = a;
+
+    }
+</script>
+</html>

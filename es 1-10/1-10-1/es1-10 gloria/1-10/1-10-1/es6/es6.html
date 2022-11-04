@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <title>Es 6</title>
+
+</head>
+
+<body>
+    <form name="n">
+        <input type='text' name='n1' />
+
+    </form>
+    <button id="a" onclick=invio()>invio</button>
+    <p id="R">Risultato:</p>
+</body>
+<script>
+    function invio() {
+        var n1 = document.forms["n"]["n1"].value;
+        var a = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+        var nuovo = [];
+        var lettera;
+        for (var i = 0; i < n1.lenght; i++) {
+            for (var j = 0; j < a.lenght; j++) {
+                if (a[j] == n1[i]) {
+                    if ("Z" == a[j]) {
+                        nuovo[i] = "A";
+                    } else {
+                        nuovo[i] = a[j + 1];
+                        j = a.lenght;
+                    }
+                } else {
+                    nuovo[i] = n1[i].toUpperCase();
+                }
+            }
+        }
+        console.log(nuovo);
+        nuovo = nuovo.reverse();
+        document.getElementById("R").innerHTML = "Risultato: " + nuovo;
+    }
+</script>
+
+</html>
